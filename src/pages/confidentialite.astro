@@ -1,5 +1,5 @@
 ---
-// Déclaration de confidentialité (nLPD) — À FAIRE VALIDER par SANSO Concept avant mise en ligne
+// Déclaration de confidentialité (nLPD art. 19 : responsable, finalité, destinataires) — à faire valider par SANSO Concept
 import Base from '../layouts/Base.astro';
 import e from '../data/entreprise.json';
 ---
@@ -7,39 +7,20 @@ import e from '../data/entreprise.json';
 <Base titre="Politique de confidentialité">
   <section class="wrap legal">
     <h1>Politique de confidentialité.</h1>
-    <h2>Responsable du traitement</h2>
     <p>
-      {e.raisonSociale}, {e.adresse}, {e.npa} {e.localite} — <a href={`mailto:${e.email}`}>{e.email}</a>.
+      Responsable : {e.raisonSociale}, {e.adresse}, {e.npa} {e.localite} — <a href={`mailto:${e.email}`}>{e.email}</a>.
     </p>
-    <h2>Vos demandes</h2>
     <p>
-      Les données transmises via le formulaire de contact (nom ou entreprise, e-mail, téléphone, type de besoin et
-      message) sont utilisées uniquement pour répondre à votre demande et étudier votre projet. Elles ne sont pas
-      vendues.
+      Les informations envoyées par le formulaire de contact (nom ou entreprise, e-mail, téléphone, type de besoin et
+      message) servent uniquement à répondre à votre demande.
     </p>
-    <h2>Traitement et conservation</h2>
     <p>
-      Le formulaire transmet votre demande par e-mail à {e.raisonSociale}, via le service de messagerie d’Infomaniak
-      Network SA (Suisse). Le site n’enregistre pas les messages dans une base de données. Les échanges reçus par e-mail
-      sont conservés le temps nécessaire au suivi de votre demande et de l’éventuel mandat.
+      Le site et la messagerie sont hébergés en Suisse par Infomaniak Network SA, qui transmet votre message à{' '}
+      {e.raisonSociale}. Vos données ne sont ni vendues ni transmises à d’autres tiers.
     </p>
-    <h2>Hébergement et données techniques</h2>
+    <p>Le site n’utilise aucun cookie ni outil de mesure d’audience.</p>
     <p>
-      Le site est hébergé en Suisse par Infomaniak Network SA. Pour le fonctionnement et la sécurité du serveur,
-      l’hébergeur peut enregistrer des données techniques de connexion (adresse IP, page demandée, date et heure, type
-      de navigateur). Durée de conservation : À COMPLÉTER.
+      Pour toute question sur vos données : <a href={`mailto:${e.email}`}>{e.email}</a>.
     </p>
-    <h2>Vos droits</h2>
-    <p>
-      Vous pouvez demander l’accès, la rectification ou la suppression de vos données en écrivant à{' '}
-      <a href={`mailto:${e.email}`}>{e.email}</a>.
-    </p>
-    <h2>Cookies et liens externes</h2>
-    <p>
-      Le code du site n’installe aucun cookie et n’intègre aucun outil publicitaire ni mesure d’audience. Les polices de
-      caractères sont chargées depuis le même hébergement que le site. Le lien « Voir l’adresse » ouvre Google Maps, qui
-      applique sa propre politique de confidentialité.
-    </p>
-    <p>Dernière mise à jour : 18 novembre 2026.</p>
   </section>
 </Base>
