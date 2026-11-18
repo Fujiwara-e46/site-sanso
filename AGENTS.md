@@ -104,7 +104,7 @@ Jamais de bibliothèque chargée depuis un lien externe (CDN). Ajouter une dépe
 ## Travailler en local (éditeur de code)
 
 1. Installer Node.js 24 (LTS) et Git.
-2. `git clone https://github.com/Fujiwara667/site-sanso.git` puis `npm install`.
+2. `git clone https://github.com/Fujiwara-e46/site-sanso.git` puis `npm install`.
 3. Ouvrir le dossier dans VS Code / Cursor : accepter les extensions recommandées (Astro, Prettier, EditorConfig).
 4. `npm run dev` → http://localhost:4321 (rechargement automatique à chaque enregistrement).
 5. Créer une branche, modifier, `npm run check && npm run build && npm run verifier`, pousser, ouvrir une pull request.
