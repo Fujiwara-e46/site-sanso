@@ -1,6 +1,6 @@
 # Site SANSO Concept
 
-Site vitrine de SANSO Concept — www.sanso-concept.ch
+Site vitrine de SANSO Concept — **en ligne sur https://www.sanso-concept.ch** (Infomaniak) depuis le 18.11.2026.
 
 - Site de test : https://sanso-concept-test.netlify.app
 - **Nicolas : le guide d'utilisation est ici → [GUIDE.md](GUIDE.md)**
@@ -19,18 +19,20 @@ Voir **[GUIDE.md](GUIDE.md)** (circuit : demander → aperçu → corriger → p
 - Qualité : `npm run check` (types, lancé en CI), `npm run format` (Prettier), Dependabot propose les mises à jour une fois par mois.
 - Animations au défilement : attribut `data-anim` (voir `AGENTS.md`).
 
-### Hébergement de test (actuel) : Netlify
+### Hébergement définitif : Infomaniak (en ligne)
 
-- Site relié au dépôt GitHub : chaque fusion dans `main` met à jour le site de test, chaque pull request reçoit un lien d'aperçu.
+- Chaque fusion dans `main` construit le site et l'envoie sur Infomaniak (FTPS, GitHub Actions « Construire et publier »). Comptez une à deux minutes.
+- Vérifier une publication : GitHub → onglet **Actions** → le dernier « Construire et publier » doit être vert.
+- Relancer une publication : Actions → « Construire et publier » → **Run workflow** sur `main`.
+- Hébergement : organisation Infomaniak Sanso concept Sàrl, site `/sites/sanso-concept.ch`, PHP 8.4, SSL Let's Encrypt.
+- Domaine et messagerie (kSuite) : organisation Infomaniak S2 Concept Sàrl. Ne jamais modifier les enregistrements MX.
+
+### Hébergement de test : Netlify
+
+- Chaque pull request reçoit un lien d'aperçu ; `main` reste visible sur le site de test (non indexé).
 - Le formulaire de contact ne fonctionne pas sur Netlify (pas de PHP).
 
-### Passage sur Infomaniak (plus tard)
-
-1. Créer les secrets et variables ci-dessous.
-2. La définition de `FTP_SERVER_DIR` active automatiquement la publication Infomaniak.
-3. Netlify peut rester pour les aperçus de pull request (désactiver ses déploiements de production dans Netlify si souhaité).
-
-### Secrets GitHub à créer (Settings → Secrets and variables → Actions)
+### Secrets GitHub (en place — Settings → Secrets and variables → Actions)
 
 | Nom               | Type                 | Valeur                                                                                                    |
 | ----------------- | -------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -38,15 +40,15 @@ Voir **[GUIDE.md](GUIDE.md)** (circuit : demander → aperçu → corriger → p
 | `FTP_USERNAME`    | Secret               | utilisateur FTP                                                                                           |
 | `FTP_PASSWORD`    | Secret               | mot de passe FTP                                                                                          |
 | `SMTP_USER`       | Secret               | adresse kSuite qui envoie les demandes (ex. `site@sanso-concept.ch` ou `info@…`)                          |
-| `SMTP_PASSWORD`   | Secret               | mot de passe de cette adresse (ou mot de passe d'application)                                             |
+| `SMTP_PASSWORD`   | Secret               | mot de passe d'appareil créé pour cette adresse (Mail Infomaniak), pas le mot de passe du compte          |
 | `CONTACT_TO`      | Secret               | adresse qui reçoit les demandes (ex. `info@sanso-concept.ch`)                                             |
-| `FTP_SERVER_DIR`  | Variable             | dossier du site sur le serveur, avec `/` final (ex. `/sites/sanso-concept.ch/`)                           |
+| `FTP_SERVER_DIR`  | Variable             | `./` (l'utilisateur FTP est limité au dossier du site)                                                    |
 | `FTP_PREVIEW_DIR` | Variable (optionnel) | dossier du sous-domaine de test (ex. `/sites/test.sanso-concept.ch/`) — active l'aperçu des pull requests |
 
-### Avant mise en ligne publique
+### Reste à faire
 
 - [ ] Renseigner le numéro IDE dans `src/data/entreprise.json`
 - [ ] Faire valider `confidentialite.astro` par SANSO Concept
 - [ ] Vérifier la licence d'utilisation web des polices Aptos / Cascadia (sinon remplacer par une police libre)
-- [ ] Remplacer les projets d'exemple
-- [ ] Protéger la branche `main` (Settings → Branches : pull request obligatoire + vérification « build » requise)
+- [x] Remplacer les projets d'exemple
+- [x] Protéger la branche `main` (ruleset `protection-main`)
