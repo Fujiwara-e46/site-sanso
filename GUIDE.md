@@ -6,13 +6,14 @@ puis tu publies en un clic. Rien à installer ; ça marche depuis l'ordinateur e
 **Le circuit, toujours le même : demander → regarder l'aperçu → retoucher si besoin → publier.**
 Rien n'est visible sur le vrai site avant la publication.
 
+- Vrai site : https://www.sanso-concept.ch
 - Site de test : https://sanso-concept-test.netlify.app
 - Dépôt GitHub (le dossier qui contient le site) : https://github.com/Fujiwara667/site-sanso
 
 ## Avant de commencer (fait par Hugo)
 
 - [x] Application GitHub « ChatGPT Codex Connector » autorisée sur le dépôt `site-sanso`.
-- [ ] Invitation de Nicolas comme collaborateur sur le dépôt.
+- [x] Invitation de Nicolas comme collaborateur sur le dépôt.
 - [x] Site de test et aperçus Netlify publics : aucun compte Netlify nécessaire pour les voir.
 
 ## Étape 1 – Compte GitHub et invitation (5 min)
@@ -70,7 +71,9 @@ nouvelle pull request au lieu de mettre à jour l'ancienne, ferme l'ancienne (**
 
 ### 6. Publier
 
-Dans la pull request : **Merge pull request** → **Confirm merge**. Le site est mis à jour une à deux minutes plus tard.
+Dans la pull request : **Merge pull request** → **Confirm merge**. Le vrai site, https://www.sanso-concept.ch, est mis
+à jour une à deux minutes plus tard. Pour vérifier : onglet **Actions** du dépôt, la dernière ligne
+« Construire et publier » doit avoir une coche verte (✔).
 
 ## Photos
 
