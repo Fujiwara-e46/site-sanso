@@ -8,7 +8,7 @@ Rien n'est visible sur le vrai site avant la publication.
 
 - Vrai site : https://www.sanso-concept.ch
 - Site de test : https://sanso-concept-test.netlify.app
-- Dépôt GitHub (le dossier qui contient le site) : https://github.com/Fujiwara667/site-sanso
+- Dépôt GitHub (le dossier qui contient le site) : https://github.com/Fujiwara-e46/site-sanso
 
 ## Avant de commencer (fait par Hugo)
 
@@ -21,7 +21,7 @@ Rien n'est visible sur le vrai site avant la publication.
 GitHub garde toutes les versions du site : rien ne peut être perdu.
 
 1. Crée un compte gratuit sur [github.com](https://github.com) (bouton **Sign up**). Envoie ton nom d'utilisateur à Hugo.
-2. Tu reçois un e-mail « invited you to collaborate on Fujiwara667/site-sanso ». Clique sur **View invitation**,
+2. Tu reçois un e-mail « invited you to collaborate on Fujiwara-e46/site-sanso ». Clique sur **View invitation**,
    puis **Accept invitation**.
 3. Optionnel : installe l'application **GitHub** sur ton téléphone pour publier depuis partout.
 
@@ -34,7 +34,7 @@ ensuite, le téléphone suffit pour lancer des demandes.
 1. Ouvre [chatgpt.com/codex](https://chatgpt.com/codex) et connecte-toi avec ton compte ChatGPT.
 2. Choisis **Work in → Cloud**, puis **Select environment → Create environment**.
 3. Quand il le demande, clique sur **Connect GitHub** et autorise l'accès avec ton compte GitHub.
-4. Choisis le dépôt **Fujiwara667/site-sanso**, puis **Get started**. Codex analyse le site et installe ce qu'il faut
+4. Choisis le dépôt **Fujiwara-e46/site-sanso**, puis **Get started**. Codex analyse le site et installe ce qu'il faut
    (une à deux minutes).
 5. Dans les réglages de l'environnement, accès internet : choisis **Package managers** (suffisant, et plus sûr que « All »).
 6. Vérifie que l'installation a réussi, enregistre, puis clique sur **Publish**. Attends le message **Environment published**.
