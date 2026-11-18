@@ -12,19 +12,24 @@ on:
     types: [opened, synchronize, reopened, labeled, unlabeled]
   workflow_dispatch:
 
+# Droits minimaux du jeton GitHub : lecture seule du dépôt
+permissions:
+  contents: read
+
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true
 
+# Actions figées sur une version précise (empreinte SHA) : Dependabot les met à jour chaque mois
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0 # historique complet : permet de comparer avec main
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
           cache: npm
@@ -63,7 +68,7 @@ jobs:
       # Production : uniquement après fusion dans main
       - name: Publier sur Infomaniak
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.FTP_SERVER_DIR != ''
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -75,7 +80,7 @@ jobs:
       # Aperçu (optionnel) : chaque pull request est publiée sur le sous-domaine de test
       - name: Publier l'aperçu
         if: github.event_name == 'pull_request' && vars.FTP_PREVIEW_DIR != ''
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
