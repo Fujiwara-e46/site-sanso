@@ -1,5 +1,5 @@
 ---
-// Mentions légales — les coordonnées viennent de src/data/entreprise.json
+// Mentions légales (LCD art. 3 al. 1 let. s) — nom exact du registre du commerce ; coordonnées dans src/data/entreprise.json
 import Base from '../layouts/Base.astro';
 import e from '../data/entreprise.json';
 ---
@@ -7,25 +7,16 @@ import e from '../data/entreprise.json';
 <Base titre="Mentions légales">
   <section class="wrap legal">
     <h1>Mentions légales.</h1>
-    <h2>Éditeur du site</h2>
     <p>
-      {e.raisonSociale}
+      {e.raisonSocialeRegistre}
       <br />
       {e.adresse}, {e.npa} {e.localite}
       <br />
       IDE : {e.ide}
       <br />
-      {e.email}
+      <a href={`mailto:${e.email}`}>{e.email}</a>
       <br />
       {e.telephone}
     </p>
-    <p>Responsable du contenu : {e.responsable}.</p>
-    <h2>Hébergement</h2>
-    <p>
-      L’aperçu de ce site est hébergé sur Netlify. Le projet prévoit un hébergement final chez Infomaniak Network SA,
-      Rue Eugène-Marziano 25, 1227 Les Acacias (GE), Suisse.
-    </p>
-    <h2>Contenus et illustrations</h2>
-    <p>Les photographies et le logo sont fournis par SANSO CONCEPT.</p>
   </section>
 </Base>
