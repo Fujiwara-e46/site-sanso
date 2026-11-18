@@ -1,5 +1,5 @@
 ---
-// Mentions légales (LCD art. 3 al. 1 let. s) — les coordonnées viennent de src/data/entreprise.json
+// Mentions légales (LCD art. 3 al. 1 let. s) — nom exact du registre du commerce ; coordonnées dans src/data/entreprise.json
 import Base from '../layouts/Base.astro';
 import e from '../data/entreprise.json';
 ---
@@ -8,7 +8,7 @@ import e from '../data/entreprise.json';
   <section class="wrap legal">
     <h1>Mentions légales.</h1>
     <p>
-      {e.raisonSociale}
+      {e.raisonSocialeRegistre}
       <br />
       {e.adresse}, {e.npa} {e.localite}
       <br />
