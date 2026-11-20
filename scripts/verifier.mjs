@@ -67,7 +67,7 @@ for (const f of html.filter((x) => x.endsWith('.html'))) {
   }
 }
 
-// 5. Fichiers techniques modifiés dans la pull request (à faire relire par Hugo)
+// 5. Fichiers techniques modifiés dans la pull request (à faire relire par l'administrateur)
 const base = process.env.GITHUB_BASE_REF;
 if (base) {
   try {

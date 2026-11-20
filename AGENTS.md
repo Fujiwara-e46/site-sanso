@@ -17,7 +17,7 @@ Réponds en français, sans jargon technique.
 
 ## Règles à ne jamais enfreindre
 
-1. **Fichiers techniques** — ne pas modifier sans demande explicite de l'administrateur (Hugo) : `.github/`, `scripts/`, `public/contact.php`, `public/.htaccess`, `astro.config.mjs`, `package.json`, `package-lock.json`, `netlify.toml`, `src/content.config.ts`. La vérification automatique bloque sinon.
+1. **Fichiers techniques** — ne pas modifier sans demande explicite de l'administrateur : `.github/`, `scripts/`, `public/contact.php`, `public/.htaccess`, `astro.config.mjs`, `package.json`, `package-lock.json`, `netlify.toml`, `src/content.config.ts`. La vérification automatique bloque sinon.
 2. **Aucun mot de passe, identifiant FTP/SMTP ou clé** dans un fichier. Ils sont uniquement dans les secrets GitHub.
 3. **Ne jamais proposer de modifier les DNS / MX** du domaine : les e-mails kSuite en dépendent.
 4. Site **en français uniquement** (fr-CH). Apostrophes typographiques ’, guillemets « », espace avant : ; ? !
